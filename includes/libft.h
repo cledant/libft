@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:12:52 by cledant           #+#    #+#             */
-/*   Updated: 2016/03/06 20:59:10 by cledant          ###   ########.fr       */
+/*   Updated: 2016/05/05 11:24:14 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,5 +138,17 @@ char				**ft_strnew_char2(size_t size);
 void				ft_putendl_char2(char **str);
 void				ft_switch_char2(char ***str1, char ***str2);
 void				ft_lstfree_malloc(void *content, size_t size);
+void				ft_strtoupper(char *s);
+void				ft_strtolower(char *s);
+size_t				ft_wcharlen(wchar_t c);
+void				ft_wputchar(wchar_t c);
+void				ft_wputstr(wchar_t *s);
+size_t				ft_wlen_strlen(wchar_t *s);
+size_t				ft_wstrlen(wchar_t *s);
+wchar_t				*ft_wstrnew(size_t size);
+wchar_t				*ft_wstrcpy(wchar_t *dst, wchar_t *src);
+wchar_t				*ft_wstrdup(wchar_t *s1);
+wchar_t				*ft_wstrjoin(wchar_t *s1, wchar_t *s2);
+
 
 #endif
