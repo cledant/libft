@@ -6,13 +6,13 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 08:27:12 by cledant           #+#    #+#             */
-/*   Updated: 2016/02/02 09:45:17 by cledant          ###   ########.fr       */
+/*   Updated: 2016/05/17 11:39:52 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_ten_pow(int power)
+static inline int				ft_ten_pow(int power)
 {
 	int counter;
 	int result;
@@ -32,7 +32,7 @@ static int		ft_ten_pow(int power)
 	}
 }
 
-static size_t	ft_strlen_digit(const char *str)
+static inline size_t			ft_strlen_digit(const char *str)
 {
 	size_t	len;
 
@@ -50,7 +50,8 @@ static size_t	ft_strlen_digit(const char *str)
 	return (len);
 }
 
-static int		ft_internal_atoi(const char *s, int count, int s_len, int res)
+static inline long long int		ft_internal_atoi(const char *s, int count,
+									int s_len, long long int res)
 {
 	while (count < s_len)
 	{
@@ -74,18 +75,22 @@ static int		ft_internal_atoi(const char *s, int count, int s_len, int res)
 	return (res);
 }
 
-int				ft_atoi(const char *str)
+int								ft_atoi(const char *str)
 {
-	int			result;
-	size_t		counter;
-	size_t		str_len;
+	long long int		result;
+	size_t				counter;
+	size_t				str_len;
 
 	counter = 0;
 	result = 0;
-	while (*str == ft_isspace(*str) || (*str >= 9 && *str <= 13))
+	while (ft_isspace(*str) == 1)
 		str++;
 	str_len = ft_strlen_digit(str);
 	str = str + str_len - 1;
 	result = ft_internal_atoi(str, counter, str_len, result);
+	if (result > 2147483647)
+		return (0);
+	if (result < -2147483648)
+		return (0);
 	return (result);
 }

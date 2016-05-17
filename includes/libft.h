@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:12:52 by cledant           #+#    #+#             */
-/*   Updated: 2016/05/14 17:18:06 by cledant          ###   ########.fr       */
+/*   Updated: 2016/05/17 11:43:11 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,5 +149,7 @@ wchar_t				*ft_wstrnew(size_t size);
 wchar_t				*ft_wstrcpy(wchar_t *dst, wchar_t *src);
 wchar_t				*ft_wstrdup(wchar_t *s1);
 wchar_t				*ft_wstrjoin(wchar_t *s1, wchar_t *s2);
+size_t				ft_can_be_atoi_len(char *c);
+int					ft_is_not_int(char *str);
 
 #endif

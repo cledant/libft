@@ -6,7 +6,7 @@
 #    By: cledant <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 10:40:13 by cledant           #+#    #+#              #
-#    Updated: 2016/05/05 11:26:41 by cledant          ###   ########.fr        #
+#    Updated: 2016/05/17 11:45:51 by cledant          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ SRC_NAME = 	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memc
 		ft_is_str_only_spaces.c ft_is_str_alphanum.c ft_lstfree_malloc.c \
 		ft_strtoupper.c ft_strtolower.c ft_wcharlen.c ft_wputchar.c ft_wputstr.c \
 		ft_wlen_strlen.c ft_wstrlen.c ft_wstrnew.c ft_wstrcpy.c ft_wstrdup.c \
-		ft_wstrjoin.c
+		ft_wstrjoin.c ft_can_be_atoi_len.c ft_is_not_int.c
 
 SRC_PATH = ./srcs/
 
