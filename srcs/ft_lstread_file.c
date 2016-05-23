@@ -42,7 +42,7 @@ t_list			*ft_lstread_file(int fd)
 	char	*line;
 	int		ret;
 
-	if (fd <= 0)
+	if (fd < 0)
 		return (NULL);
 	ret = get_next_line(fd, &line);
 	if (ret == -1)
