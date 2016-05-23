@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   gnl_prompt.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -46,6 +46,12 @@ static int	ft_read_buff(int fd, char **perma_buff, size_t *nb_ret_line)
 	}
 	while (ret_read > 0)
 	{
+		if (fd == 0 && ft_strchr(buff, '\n') != NULL)
+		{
+			if (ft_read_cpy(perma_buff, buff, ret_read) == -1)
+				return (-1);
+			return (ret_read);
+		}
 		if (ft_read_cpy(perma_buff, buff, ret_read) == -1)
 			return (-1);
 		ret_read = read(fd, buff, BUFF_SIZE);
@@ -104,7 +110,7 @@ static int	ft_find_nextline(char *cpy_perma_buff, char **perma_buff,
 	return (1);
 }
 
-int			get_next_line(int const fd, char **line)
+int			gnl_prompt(int const fd, char **line)
 {
 	static size_t	ret_line = 0;
 	static char		*perma_buff;

@@ -102,6 +102,7 @@ void				ft_putnbrendl_fd(int n, int fd);
 void				ft_putendln(char const *s, size_t n);
 void				ft_putstrn(char const *s, size_t n);
 int					get_next_line(int fd, char **line);
+int					gnl_prompt(int fd, char **line);
 int					ft_max(int i, int j);
 int					**ft_int_tab2_new(size_t i, size_t j);
 int					ft_can_be_atoi(char *c);
