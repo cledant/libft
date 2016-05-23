@@ -27,10 +27,11 @@ static int		ft_read_routine(int ret, t_list *list, char *line)
 		new = ft_lstnew(line, ft_strlen(line) + 1);
 		if (new == NULL)
 		{
-			ft_lstdel(&list, &ft_bzero);
+			ft_lstdel(&list, &ft_lstfree_malloc);
 			ft_strdel(&line);
 			return (0);
 		}
+		ft_strdel(&line);
 		ft_lstpushback(list, new);
 	}
 	return (1);
@@ -54,5 +55,7 @@ t_list			*ft_lstread_file(int fd)
 			return (NULL);
 	if (ft_read_routine(ret, list, line) == 0)
 		return (NULL);
+	if (line != NULL)
+		ft_strdel(&line);
 	return (list);
 }
