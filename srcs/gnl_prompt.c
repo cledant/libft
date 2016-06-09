@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 08:35:55 by cledant           #+#    #+#             */
-/*   Updated: 2016/02/02 09:58:06 by cledant          ###   ########.fr       */
+/*   Updated: 2016/06/09 20:41:26 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	ft_read_buff(int fd, char **perma_buff, size_t *nb_ret_line)
 	{
 		ft_strdel(perma_buff);
 		*perma_buff = ft_strnew(0);
-		if (perma_buff == NULL)
+		if (*perma_buff == NULL)
 			return (-1);
 		*nb_ret_line = 0;
 	}
@@ -63,7 +63,7 @@ static int	ft_check_end(char *cpy_perma_buff, size_t *nb_ret_line,
 							char **line, char **perma_buff)
 {
 	*line = ft_strnew(0);
-	if (line == NULL)
+	if (*line == NULL)
 		return (-1);
 	if (cpy_perma_buff == NULL)
 		return (0);
@@ -95,7 +95,7 @@ static int	ft_find_nextline(char *cpy_perma_buff, char **perma_buff,
 				*(cpy_perma_buff + counter) == 26)
 		{
 			*line = ft_strnew(counter);
-			if (line == NULL)
+			if (*line == NULL)
 				return (-1);
 			ft_strncpy(*line, cpy_perma_buff, counter);
 			ft_strdel(perma_buff);
@@ -104,7 +104,7 @@ static int	ft_find_nextline(char *cpy_perma_buff, char **perma_buff,
 	}
 	(*nbr_ret_line)++;
 	*line = ft_strnew(counter);
-	if (line == NULL)
+	if (*line == NULL)
 		return (-1);
 	ft_strncpy(*line, cpy_perma_buff, counter);
 	return (1);
