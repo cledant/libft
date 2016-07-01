@@ -153,5 +153,6 @@ wchar_t				*ft_wstrjoin(wchar_t *s1, wchar_t *s2);
 size_t				ft_can_be_atoi_len(char *c);
 int					ft_is_not_int(char *str);
 char				*ft_strjoin_cat(char const *s1, char const *s2, char c);
+int					ft_tputchar(int c);
 
 #endif
