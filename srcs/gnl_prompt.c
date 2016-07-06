@@ -33,10 +33,10 @@ static int	ft_read_cpy(char **perma_buff, char *buff, int ret_read)
 static int	ft_read_buff(int fd, char **perma_buff, size_t *nb_ret_line)
 {
 	int		ret_read;
-	char	buff[BUFF_SIZE + 1];
+	char	buff[BUFF_PROMPT + 1];
 
-	ft_bzero(buff, BUFF_SIZE + 1);
-	if ((ret_read = read(fd, buff, BUFF_SIZE)) > 0)
+	ft_bzero(buff, BUFF_PROMPT + 1);
+	if ((ret_read = read(fd, buff, BUFF_PROMPT)) > 0)
 	{
 		ft_strdel(perma_buff);
 		*perma_buff = ft_strnew(0);
@@ -54,7 +54,7 @@ static int	ft_read_buff(int fd, char **perma_buff, size_t *nb_ret_line)
 		}
 		if (ft_read_cpy(perma_buff, buff, ret_read) == -1)
 			return (-1);
-		ret_read = read(fd, buff, BUFF_SIZE);
+		ret_read = read(fd, buff, BUFF_PROMPT);
 	}
 	return (ret_read);
 }
@@ -119,7 +119,7 @@ int			gnl_prompt(int const fd, char **line)
 	int				ret_read;
 
 	counter = 0;
-	if (line == NULL || fd < 0 || (BUFF_SIZE <= 0 && BUFF_SIZE > 7500000))
+	if (line == NULL || fd < 0 || (BUFF_PROMPT <= 0 && BUFF_PROMPT > 7500000))
 		return (-1);
 	if (ft_read_buff(fd, &perma_buff, &ret_line) == -1)
 		return (-1);

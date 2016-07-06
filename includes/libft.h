@@ -18,6 +18,7 @@
 # include <unistd.h>
 
 # define BUFF_SIZE 32
+# define BUFF_PROMPT 1
 
 typedef struct		s_list
 {
