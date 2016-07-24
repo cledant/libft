@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:12:52 by cledant           #+#    #+#             */
-/*   Updated: 2016/06/26 19:30:33 by cledant          ###   ########.fr       */
+/*   Updated: 2016/07/24 20:37:45 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,5 +155,6 @@ size_t				ft_can_be_atoi_len(char *c);
 int					ft_is_not_int(char *str);
 char				*ft_strjoin_cat(char const *s1, char const *s2, char c);
 int					ft_tputchar(int c);
+t_list				*ft_lstnewpushback(t_list *new, void *buff, size_t size);
 
 #endif
