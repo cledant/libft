@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:12:52 by cledant           #+#    #+#             */
-/*   Updated: 2016/07/24 20:37:45 by cledant          ###   ########.fr       */
+/*   Updated: 2016/07/28 21:51:26 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,10 @@ char				**ft_strsplit(char const *s, char c);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstadd(t_list **alst, t_list *new_);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-void				ft_lstpushback(t_list *alst, t_list *new);
+void				ft_lstpushback(t_list *alst, t_list *new_);
 int					ft_abs(int n);
 int					ft_isodd(int n);
 int					ft_iseven(int n);
@@ -116,7 +116,7 @@ t_btree				*ft_btree_new(void const *content, size_t content_size);
 void				ft_btree_delone(t_btree **alst, void (*del)(void *,
 						size_t));
 void				ft_btree_del_all_node(t_btree **alst);
-void				ft_btree_add_node(t_btree *root, t_btree *new, int
+void				ft_btree_add_node(t_btree *root, t_btree *new_, int
 						(*cmpf)(void *, void *));
 void				ft_btree_apply_reverse_infix(t_btree *root,
 						void (*apply)(void *));
@@ -155,6 +155,6 @@ size_t				ft_can_be_atoi_len(char *c);
 int					ft_is_not_int(char *str);
 char				*ft_strjoin_cat(char const *s1, char const *s2, char c);
 int					ft_tputchar(int c);
-t_list				*ft_lstnewpushback(t_list *new, void *buff, size_t size);
+t_list				*ft_lstnewpushback(t_list *new_, void *buff, size_t size);
 
 #endif
