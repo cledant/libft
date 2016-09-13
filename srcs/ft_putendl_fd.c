@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:55:13 by cledant           #+#    #+#             */
-/*   Updated: 2015/11/25 18:57:46 by cledant          ###   ########.fr       */
+/*   Updated: 2016/09/13 20:28:00 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	char	c;
+
+	c = '\n';
+	write(fd, s, ft_strlen(s));
+	write(fd, &c, 1);
 }
