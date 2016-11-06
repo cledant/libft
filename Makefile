@@ -14,6 +14,8 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra -O2 -fsigned-char
 
+OBJ_DIR_NAME = obj
+
 INCLUDES = ./includes
 
 SRC_NAME = 	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c ft_memcmp.c \
@@ -41,25 +43,26 @@ SRC_NAME = 	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memc
 		ft_wstrjoin.c ft_can_be_atoi_len.c ft_is_not_int.c gnl_prompt.c \
 		ft_tputchar.c ft_lstnewpushback.c
 
-SRC_PATH = ./srcs/
+SRC_PATH = ./srcs
 
-SRC =	$(addprefix $(SRC_PATH),$(SRC_NAME))
-
-OBJ =	$(SRC_NAME:.c=.o)
+OBJ =	$(SRC_NAME:%.c=$(OBJ_DIR_NAME)/%.o)
 
 NAME = libft.a
 
-all : $(NAME)
+all : $(OBJ_DIR_NAME) $(NAME)
+
+$(OBJ_DIR_NAME) :
+	mkdir $(OBJ_DIR_NAME)
 
 $(NAME) : $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-$(OBJ) :
-	$(CC) -c $(SRC) $(CFLAGS) -I$(INCLUDES)
+$(OBJ_DIR_NAME)/%.o : $(SRC_PATH)/%.c
+	$(CC) -o $@ -c $< $(CFLAGS) -I$(INCLUDES)
 
 clean :
-	rm -rf $(OBJ)
+	rm -rf $(OBJ_DIR_NAME)
 
 fclean : clean
 	rm -rf $(NAME)
