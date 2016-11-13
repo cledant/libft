@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 09:31:20 by cledant           #+#    #+#             */
-/*   Updated: 2016/02/02 09:04:52 by cledant          ###   ########.fr       */
+/*   Updated: 2016/11/13 17:25:57 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t		ft_char2_index_size(char **argv)
 {
-	int		count;
+	size_t	count;
 
 	count = 0;
 	while (argv != NULL && *argv != '\0')
