@@ -156,5 +156,6 @@ int					ft_is_not_int(char *str);
 char				*ft_strjoin_cat(char const *s1, char const *s2, char c);
 int					ft_tputchar(int c);
 t_list				*ft_lstnewpushback(t_list *new, void *buff, size_t size);
+size_t				ft_strnlen(const char *s, size_t len);
 
 #endif
