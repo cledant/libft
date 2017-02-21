@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 08:35:55 by cledant           #+#    #+#             */
-/*   Updated: 2016/06/09 20:09:23 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/21 19:37:29 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,16 @@ static int	ft_read_buff(int fd, char **perma_buff, size_t *nb_ret_line)
 			return (-1);
 		*nb_ret_line = 0;
 	}
-	while (ret_read > 0)
+	while (ret_read == BUFF_SIZE)
 	{
 		if (ft_read_cpy(perma_buff, buff, ret_read) == -1)
 			return (-1);
 		ret_read = read(fd, buff, BUFF_SIZE);
+	}
+	if (ret_read > 0 && ret_read < BUFF_SIZE)
+	{
+		if (ft_read_cpy(perma_buff, buff, ret_read) == -1)
+			return (-1);
 	}
 	return (ret_read);
 }
