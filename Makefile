@@ -6,7 +6,7 @@
 #    By: cledant <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 10:40:13 by cledant           #+#    #+#              #
-#    Updated: 2016/08/21 14:49:46 by cledant          ###   ########.fr        #
+#    Updated: 2017/02/21 13:12:52 by cledant          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,12 +49,12 @@ OBJ =	$(SRC_NAME:%.c=$(OBJ_DIR_NAME)/%.o)
 
 NAME = libft.a
 
-all : $(OBJ_DIR_NAME) $(NAME)
+all : $(NAME)
 
 $(OBJ_DIR_NAME) :
 	mkdir $(OBJ_DIR_NAME)
 
-$(NAME) : $(OBJ)
+$(NAME) : $(OBJ_DIR_NAME) $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
