@@ -6,7 +6,7 @@
 #    By: cledant <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 10:40:13 by cledant           #+#    #+#              #
-#    Updated: 2017/02/22 11:27:56 by cledant          ###   ########.fr        #
+#    Updated: 2017/02/22 13:06:54 by cledant          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ CFLAGS = -Wall -Werror -Wextra -O2 -fsigned-char
 OBJ_DIR_NAME = obj
 
 INCLUDES = ./includes
+
+INCLUDES_PRINTF = ./ft_printf/includes
 
 SRC_NAME = 	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_puts.c \
 			ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c ft_strdup.c \
@@ -47,9 +49,47 @@ SRC_NAME = 	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_puts.c \
 			ft_wstrjoin.c ft_can_be_atoi_len.c ft_is_not_int.c \
 			ft_tputchar.c ft_lstneworpushback.c ft_strnlen.c ft_strconcat.c
 
+SRC_NAME_PRINTF =	ft_printf.c ft_printf_is_converter.c ft_printf_analyse_string.c \
+			ft_printf_is_flag.c ft_printf_is_modifier.c ft_printf_fill_converter.c \
+			ft_printf_parse_type.c ft_printf_fill_flag.c ft_printf_print_args.c \
+			ft_printf_fill_modifier.c ft_printf_setup_data.c ft_printf_init_data.c \
+			ft_printf_d.c ft_printf_u.c ft_printf_hex_converter_long_int.c \
+			ft_printf_itoa_unsigned.c ft_printf_o.c ft_printf_octal_converter.c \
+			ft_printf_xx.c ft_printf_hex_converter.c ft_strtoupper.c \
+			ft_printf_ld.c ft_printf_itoa_long_int.c ft_printf_lxx.c \
+			ft_printf_lo.c ft_printf_octal_converter_long_int.c ft_printf_lu.c \
+			ft_printf_itoa_unsigned_long_int.c \
+			ft_printf_s.c ft_printf_c.c ft_printf_ls.c \
+			ft_printf_lc.c ft_printf_lld.c \
+			ft_printf_llo.c ft_printf_llu.c ft_printf_llxx.c \
+			ft_printf_hex_converter_long_long_int.c \
+			ft_printf_octal_converter_long_long_int.c \
+			ft_printf_itoa_long_long_int.c ft_printf_itoa_unsigned_long_long_int.c \
+			ft_printf_hd.c ft_printf_ho.c ft_printf_hu.c ft_printf_hxx.c \
+			ft_printf_hhd.c ft_printf_hho.c ft_printf_hhu.c \
+			ft_printf_hhxx.c ft_printf_p.c ft_printf_add_front_string.c \
+			ft_printf_chain_modifier.c ft_printf_chain_modifier_ull.c \
+			ft_printf_mod_precision.c ft_printf_mod_rm_preci.c ft_printf_mod_size.c\
+			ft_printf_mod_precision_str_simple.c \
+			ft_wlen_strnlen.c ft_printf_mod_size_w.c ft_wlen_strcpy.c \
+			ft_printf_chain_modifier_w.c \
+			ft_printf_mod_precision_str_w.c ft_printf_mod_size_zero.c \
+			ft_printf_mod_size_zero_hex.c ft_printf_mod_size_zero_w.c \
+			ft_printf_add_n_behind_string.c ft_str_front_n_remove.c \
+			ft_printf_mod_size_zero_string.c \
+			ft_printf_add_n_behind_w_string.c ft_printf_other.c \
+			ft_printf_length_0.c ft_printf_length_1.c ft_printf_length_2.c \
+			ft_printf_length_minus_1.c ft_printf_length_minus_2.c \
+			ft_printf_set_flag_zero_sc.c ft_printf_init_analyse.c \
+			ft_printf_length_j.c ft_printf_length_z.c
+
 SRC_PATH = ./srcs
 
+SRC_PATH_PRINTF = ./ft_printf/srcs
+
 OBJ =	$(SRC_NAME:%.c=$(OBJ_DIR_NAME)/%.o)
+
+OBJ_PRINTF =	$(SRC_NAME_PRINTF:%.c=$(OBJ_DIR_NAME)/%.o)
 
 NAME = libft.a
 
@@ -58,12 +98,19 @@ all : $(NAME)
 $(OBJ_DIR_NAME) :
 	mkdir $(OBJ_DIR_NAME)
 
+libftprintf : $(OBJ_DIR_NAME) $(OBJ) $(OBJ_PRINTF)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
+
 $(NAME) : $(OBJ_DIR_NAME) $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 $(OBJ_DIR_NAME)/%.o : $(SRC_PATH)/%.c
 	$(CC) -o $@ -c $< $(CFLAGS) -I$(INCLUDES)
+
+$(OBJ_DIR_NAME)/%.o : $(SRC_PATH_PRINTF)/%.c
+	$(CC) -o $@ -c $< $(CFLAGS) -I$(INCLUDES) -I$(INCLUDES_PRINTF)
 
 clean :
 	rm -rf $(OBJ_DIR_NAME)
@@ -73,4 +120,6 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all clean fclean re
+re_libftprintf : fclean libftprintf
+
+.PHONY : all clean fclean re libftprintf re_libftprintf

@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:12:52 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/22 11:19:51 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/22 11:57:51 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putnbrendl_fd(int n, int fd);
 int					ft_tputchar(int c);
 int					ft_puts(const char *s);
+int					ft_printf(const char *restrict format, ...);
 
 /*
 **	INPUT FUNCTIONS
