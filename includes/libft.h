@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:12:52 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/22 09:19:48 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/22 10:28:29 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,9 @@ void				ft_strtolower(char *s);
 char				*ft_strconcat(char const *s1, char const *s2, char c);
 size_t				ft_can_be_atoi_len(char *c);
 size_t				ft_strnlen(const char *s, size_t len);
-int					ft_strchrncmp(const char *s1, const char *s2, size_t n);
+int					ft_strchrncmp(const char *s1, int c, size_t n);
+void				ft_switch_str(char **str1, char **str2);
+size_t				ft_strlen_till_char(const char *s, int c);
 
 /*
 **	IS SOMETHING FUNCTIONS
@@ -143,6 +145,8 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstpushback(t_list *alst, t_list *new);
 size_t				ft_lstcount_non_zero_size_node(t_list *list);
 size_t				ft_lstcount_node(t_list *list);
+void				ft_lstfree_malloc(void *content, size_t size);
+t_list				*ft_lstneworpushback(t_list *new, void *buff, size_t size);
 
 /*
 **	MATH FUNCTIONS
@@ -171,41 +175,27 @@ void				ft_btree_apply_postfix(t_btree *root,
 **	UNICODE STRING FUNCTIONS
 */
 size_t				ft_wcharlen(wchar_t c);
-void				ft_wputchar(wchar_t c);
-void				ft_wputstr(wchar_t *s);
 size_t				ft_wlen_strlen(wchar_t *s);
 size_t				ft_wstrlen(wchar_t *s);
+void				ft_wputchar(wchar_t c);
+void				ft_wputstr(wchar_t *s);
 wchar_t				*ft_wstrnew(size_t size);
 wchar_t				*ft_wstrcpy(wchar_t *dst, wchar_t *src);
 wchar_t				*ft_wstrdup(wchar_t *s1);
 wchar_t				*ft_wstrjoin(wchar_t *s1, wchar_t *s2);
 
-
-
-t_list				*ft_lstread_file(int fd);
-
-
-
-
-void				ft_switch_str(char **str1, char **str2);
-size_t				ft_strlen_till_char(const char *s, int c);
+/*
+**	STRING ARRAY FUNCTIONS
+*/
+char				**ft_strnew_char2(size_t size);
 size_t				ft_char2_index_size(char **argv);
-void				ft_strdel_char2(char ***argv);
 char				**ft_strdup_char2(char **str);
 char				**ft_strcpy_char2(char **dst, char **src);
-char				**ft_strnew_char2(size_t size);
+void				ft_strdel_char2(char ***argv);
 void				ft_putendl_char2(char **str);
 void				ft_switch_char2(char ***str1, char ***str2);
-void				ft_lstfree_malloc(void *content, size_t size);
 
-
-
-
-
-
-
-
-t_list				*ft_lstnewpushback(t_list *new, void *buff, size_t size);
+t_list				*ft_lstread_file(int fd);
 
 
 #endif
