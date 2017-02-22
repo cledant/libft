@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_cat.c                                   :+:      :+:    :+:   */
+/*   ft_strconcat.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/26 19:27:43 by cledant           #+#    #+#             */
-/*   Updated: 2016/06/26 19:28:22 by cledant          ###   ########.fr       */
+/*   Created: 2017/02/21 20:58:36 by cledant           #+#    #+#             */
+/*   Updated: 2017/02/21 20:59:02 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin_cat(char const *s1, char const *s2, char c)
+char	*ft_strconcat(char const *s1, char const *s2, char c)
 {
 	size_t	len;
 	char	*result;
