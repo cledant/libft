@@ -6,7 +6,7 @@
 #    By: cledant <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 10:40:13 by cledant           #+#    #+#              #
-#    Updated: 2017/02/22 13:06:54 by cledant          ###   ########.fr        #
+#    Updated: 2017/02/22 13:21:44 by cledant          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,7 +99,7 @@ $(OBJ_DIR_NAME) :
 	mkdir $(OBJ_DIR_NAME)
 
 libftprintf : $(OBJ_DIR_NAME) $(OBJ) $(OBJ_PRINTF)
-	ar rc $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ) $(OBJ_PRINTF)
 	ranlib $(NAME)
 
 $(NAME) : $(OBJ_DIR_NAME) $(OBJ)
