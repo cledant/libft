@@ -6,7 +6,7 @@
 #    By: cledant <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 10:40:13 by cledant           #+#    #+#              #
-#    Updated: 2017/02/22 10:56:18 by cledant          ###   ########.fr        #
+#    Updated: 2017/02/22 11:27:56 by cledant          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ SRC_NAME = 	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_puts.c \
 			ft_abs.c ft_isodd.c ft_iseven.c ft_putnbrendl.c ft_putnbrendl_fd.c \
 			ft_lstpushback.c ft_putendln.c ft_putstrn.c get_next_line.c \
 			ft_isspace.c ft_max.c ft_can_be_atoi.c ft_strsplit_allspace.c \
-			ft_lstread_file.c ft_lstcount_non_zero_size_node.c ft_lstcount_node.c \
+			ft_lstread_fd.c ft_lstcount_non_zero_size_node.c ft_lstcount_node.c \
 			ft_round_double.c ft_btree_new.c ft_btree_delone.c \
 			ft_btree_del_all_node.c ft_btree_add_node.c \
 			ft_btree_apply_reverse_infix.c ft_btree_apply_infix.c \
