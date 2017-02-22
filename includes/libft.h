@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:12:52 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/22 10:28:29 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/22 10:50:08 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putnbrendl_fd(int n, int fd);
 int					ft_tputchar(int c);
+int					ft_puts(const char *s);
 
 /*
 **	INPUT FUNCTIONS
@@ -147,6 +148,7 @@ size_t				ft_lstcount_non_zero_size_node(t_list *list);
 size_t				ft_lstcount_node(t_list *list);
 void				ft_lstfree_malloc(void *content, size_t size);
 t_list				*ft_lstneworpushback(t_list *new, void *buff, size_t size);
+t_list				*ft_lstread_file(int fd);
 
 /*
 **	MATH FUNCTIONS
@@ -194,8 +196,5 @@ char				**ft_strcpy_char2(char **dst, char **src);
 void				ft_strdel_char2(char ***argv);
 void				ft_putendl_char2(char **str);
 void				ft_switch_char2(char ***str1, char ***str2);
-
-t_list				*ft_lstread_file(int fd);
-
 
 #endif
