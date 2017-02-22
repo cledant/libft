@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:12:52 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/21 21:08:23 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/22 09:19:48 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void				ft_strtolower(char *s);
 char				*ft_strconcat(char const *s1, char const *s2, char c);
 size_t				ft_can_be_atoi_len(char *c);
 size_t				ft_strnlen(const char *s, size_t len);
+int					ft_strchrncmp(const char *s1, const char *s2, size_t n);
 
 /*
 **	IS SOMETHING FUNCTIONS
@@ -140,7 +141,8 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstpushback(t_list *alst, t_list *new);
-
+size_t				ft_lstcount_non_zero_size_node(t_list *list);
+size_t				ft_lstcount_node(t_list *list);
 
 /*
 **	MATH FUNCTIONS
@@ -179,15 +181,11 @@ wchar_t				*ft_wstrdup(wchar_t *s1);
 wchar_t				*ft_wstrjoin(wchar_t *s1, wchar_t *s2);
 
 
-int					**ft_int_tab2_new(size_t i, size_t j);
 
 t_list				*ft_lstread_file(int fd);
-size_t				ft_lstcount_non_zero_size_node(t_list *list);
-size_t				ft_lstcount_node(t_list *list);
 
-int					ft_strcmp_char_n_to_first(const char *s1, const char *s2,
-						size_t n);
-void				ft_free_content(void *content, size_t content_size);
+
+
 
 void				ft_switch_str(char **str1, char **str2);
 size_t				ft_strlen_till_char(const char *s, int c);
