@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 17:19:59 by cledant           #+#    #+#             */
-/*   Updated: 2016/02/02 10:01:15 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/22 11:15:55 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void			ft_btree_del_all_node(t_btree **alst)
 {
 	if (*alst == NULL)
 		return ;
-	ft_postfix_del_content(*alst, &ft_free_content);
+	ft_postfix_del_content(*alst, &ft_lstfree_malloc);
 	ft_postfix_del_node(*alst, &free);
 	*alst = NULL;
 }

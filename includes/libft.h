@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:12:52 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/22 10:50:08 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/22 11:19:51 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,7 +148,7 @@ size_t				ft_lstcount_non_zero_size_node(t_list *list);
 size_t				ft_lstcount_node(t_list *list);
 void				ft_lstfree_malloc(void *content, size_t size);
 t_list				*ft_lstneworpushback(t_list *new, void *buff, size_t size);
-t_list				*ft_lstread_file(int fd);
+t_list				*ft_lstread_fd(int fd);
 
 /*
 **	MATH FUNCTIONS

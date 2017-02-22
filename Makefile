@@ -6,7 +6,7 @@
 #    By: cledant <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 10:40:13 by cledant           #+#    #+#              #
-#    Updated: 2017/02/22 10:48:15 by cledant          ###   ########.fr        #
+#    Updated: 2017/02/22 10:56:18 by cledant          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ SRC_NAME = 	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_puts.c \
 			ft_strtolower.c ft_wcharlen.c ft_wputchar.c ft_wputstr.c \
 			ft_wlen_strlen.c ft_wstrlen.c ft_wstrnew.c ft_wstrcpy.c ft_wstrdup.c \
 			ft_wstrjoin.c ft_can_be_atoi_len.c ft_is_not_int.c \
-			ft_tputchar.c ft_lstnewpushback.c ft_strnlen.c ft_strconcat.c
+			ft_tputchar.c ft_lstneworpushback.c ft_strnlen.c ft_strconcat.c
 
 SRC_PATH = ./srcs
 
