@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:12:52 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/22 11:19:51 by cledant          ###   ########.fr       */
+/*   Updated: 2017/05/01 16:14:31 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,18 @@ typedef struct		s_btree
 	void			*content;
 	size_t			content_size;
 }					t_btree;
+
+typedef struct		s_cbuff
+{
+	size_t			size;
+	size_t			r_pos;
+	size_t			w_pos;
+	size_t			enqueue_cumul;
+	size_t			overwrite;
+	char			*buff;
+	char			*enqueue_buff;
+	char			*dequeue_buff;
+}					t_cbuff;
 
 /*
 **	STRINGS FUNCTIONS
@@ -197,4 +209,15 @@ void				ft_strdel_char2(char ***argv);
 void				ft_putendl_char2(char **str);
 void				ft_switch_char2(char ***str1, char ***str2);
 
+/*
+**	CIRCULAR BUFFER FUNCTIONS
+*/
+t_cbuff				*ft_cbuff_create(const size_t buff_size);
+void				ft_cbuff_destroy(t_cbuff **cbuff);
+size_t				ft_cbuff_enqueue(t_cbuff *cbuff, const size_t e_size);
+size_t				ft_cbuff_dequeue(t_cbuff *cbuff, const size_t d_size);
+size_t				ft_cbuff_dequeue_till_head_no_change(t_cbuff *cbuff);
+void				ft_cbuff_flush(t_cbuff *cbuff);
+void				ft_cbuff_move_forward_read_head(t_cbuff *cbuff,
+						const size_t f_size);
 #endif
