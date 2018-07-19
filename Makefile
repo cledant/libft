@@ -6,13 +6,13 @@
 #    By: cledant <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 10:40:13 by cledant           #+#    #+#              #
-#    Updated: 2017/05/01 16:24:38 by cledant          ###   ########.fr        #
+#    Updated: 2018/07/19 12:52:21 by cledant          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra -O2 -fsigned-char
+CFLAGS = -Wall -Werror -Wextra -O3 -fsigned-char
 
 OBJ_DIR_NAME = obj
 
@@ -59,7 +59,7 @@ NAME = libft.a
 all : $(NAME)
 
 $(OBJ_DIR_NAME) :
-	mkdir $(OBJ_DIR_NAME)
+	mkdir -p $(OBJ_DIR_NAME)
 
 $(NAME) : $(OBJ_DIR_NAME) $(OBJ)
 	ar rc $(NAME) $(OBJ)
