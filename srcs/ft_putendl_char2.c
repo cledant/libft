@@ -14,9 +14,11 @@
 
 void	ft_putendl_char2(char **str)
 {
-	while (*str != '\0')
+	char c = '\n';
+	while (*str != NULL)
 	{
 		write(1, *str, ft_strlen(*str));
+		write(1, &c, 1);
 		str++;
 	}
 }

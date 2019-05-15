@@ -17,7 +17,7 @@ size_t		ft_char2_index_size(char **argv)
 	size_t	count;
 
 	count = 0;
-	while (argv != NULL && *argv != '\0')
+	while (argv != NULL && *argv != NULL)
 	{
 		count++;
 		argv++;

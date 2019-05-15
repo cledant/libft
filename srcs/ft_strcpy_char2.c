@@ -17,7 +17,7 @@ char	**ft_strcpy_char2(char **dst, char **src)
 	char	**cpy_dst;
 
 	cpy_dst = dst;
-	while (src != NULL && *src != '\0')
+	while (src != NULL && *src != NULL)
 	{
 		if ((*dst = ft_strdup(*src)) == NULL)
 		{
