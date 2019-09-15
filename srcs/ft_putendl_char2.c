@@ -6,7 +6,7 @@
 /*   By: cledant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 16:17:54 by cledant           #+#    #+#             */
-/*   Updated: 2016/10/19 19:10:11 by cledant          ###   ########.fr       */
+/*   Updated: 2019/09/15 12:25:40 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_putendl_char2(char **str)
 {
-	char c = '\n';
+	char	c;
+
+	c = '\n';
 	while (*str != NULL)
 	{
 		write(1, *str, ft_strlen(*str));
